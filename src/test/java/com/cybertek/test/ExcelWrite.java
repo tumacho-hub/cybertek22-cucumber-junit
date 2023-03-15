@@ -19,9 +19,9 @@ public class ExcelWrite {
 
     @Test
     public void excel_writing_test() throws IOException {
-
+        // path to our Excel sheet
         String path = "Employees.xlsx";
-// to be able to read from Excel file, we need to load it into FileInputStream
+        // to be able to read from Excel file, we need to load it into FileInputStream object
         FileInputStream fileInputStream = new FileInputStream(path);
 
         // hierarchy workbook > sheet > row > cell
@@ -34,39 +34,39 @@ public class ExcelWrite {
         //king's row
         row = sheet.getRow(1);
 
+
         //king's cell
 
         cell = row.getCell(1);
 
 
         //create and store AdamsCell
-        XSSFCell adamCell = sheet.getRow(2).createCell(0);
-
-        System.out.println("Before: " + adamCell);
+        XSSFCell madamCell = sheet.getRow(2).getCell(0);
+        System.out.println("Before: " + madamCell);
 
         // this method will override existing cell
-        adamCell.setCellValue("Madam");
+        madamCell.setCellValue("Jorge");
 
-        System.out.println("After: " + adamCell);
+        System.out.println("After: " + madamCell);
 
         // TODO: CHANGE STEVEN'S NAME TO TOM
         for (int rowNum = 0; rowNum < sheet.getLastRowNum(); rowNum++) {
-            if(sheet.getRow(rowNum).getCell(0).toString().equals("Steven")){
+            if (sheet.getRow(rowNum).getCell(0).toString().equals("Steven")) {
                 sheet.getRow(rowNum).getCell(0).setCellValue("Tom");
             }
 
+
+            //================================================================
+
+            //use fileOutputStream to push changes -> load the file to fileOutputStream
+            FileOutputStream fileOutputStream = new FileOutputStream(path);
+
+            workbook.write(fileOutputStream);
+            fileInputStream.close();
+            fileOutputStream.close();
+            workbook.close();
+
+
         }
-
-
-        //================================================================
-
-        //use fileOutputStream to push changes -> load the file to fileOutputStream
-        FileOutputStream fileOutputStream = new FileOutputStream(path);
-
-        workbook.write(fileOutputStream);
-        fileInputStream.close();
-        fileOutputStream.close();
-        workbook.close();
-
     }
 }

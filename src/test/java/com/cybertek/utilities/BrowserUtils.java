@@ -28,7 +28,6 @@ public class BrowserUtils {
 
     /**
      This method accepts a List<WebElements> and returns List<String>
-
      @param webElementList
      */
     public static List<String> getElementsText(List<WebElement> webElementList){
@@ -36,9 +35,8 @@ public class BrowserUtils {
         //Create placeholder List<String>
         List<String> actualAsString = new ArrayList<>();
 
-        for (WebElement each : webElementList) {
-
-            actualAsString.add(each.getText());
+        for (WebElement eachMonthDropDownOption : webElementList) {
+            actualAsString.add(eachMonthDropDownOption.getText());
 
         }
 

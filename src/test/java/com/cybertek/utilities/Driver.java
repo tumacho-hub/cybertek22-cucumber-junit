@@ -1,5 +1,7 @@
 package com.cybertek.utilities;
 
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +16,7 @@ public class Driver {
 
     private static WebDriver driver;
     // creating re-usable utility method that will return same driver instance everytime we call it.
+
     public static WebDriver getDriver() {
         if (driverPool.get() == null) {
 
@@ -21,7 +24,7 @@ public class Driver {
 
 
 // we read our browser type from configuration.properties file using
-// .getProperty method we creating in configurationReader class.
+// .getProperty method we're creating in configurationReader class.
                 String browserType = ConfigurationReader.getProperty("browser");
 // depending on the browser type our switch statement will determine to open specific type of browser/driver
                 switch (browserType) {

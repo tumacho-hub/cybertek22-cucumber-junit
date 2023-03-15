@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ExcelRead {
     /*
-     In this file we will able to read from excel file step by step
+     In this method we will help us read from Excel file step by step
      */
     @Test
     public void readFromExcelFile() throws IOException {
@@ -24,14 +24,14 @@ public class ExcelRead {
         // To be able to read from Excel file, we need to load it into FileInputStream
         FileInputStream fileInputStream = new FileInputStream(path);
 
-        // this is the hierarchy to work with a Excel sheet --> workbook > sheet > row > cell
+        // this is the hierarchy to work with an Excel sheet --> workbook > sheet > row > cell
         //1. Create workbook
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
 
-        //2. We need to get th specific sheet from currently opened workbook
+        //2. We need to get the specific sheet from currently opened workbook
         XSSFSheet sheet = workbook.getSheet("Employees");
 
-        //3. Select the row and sheet
+        //3. Select the row and cell
         //Print out Steven's cell
         //Indexes start from 0
         System.out.println("sheet.getRow(1).getCell(0) = " + sheet.getRow(1).getCell(0));
@@ -40,7 +40,7 @@ public class ExcelRead {
         System.out.println("sheet.getRow(3).getCell(2) = " + sheet.getRow(3).getCell(2));
 
         //Return the count of used cells only
-        //If there are cell not used, they will not be counted
+        //If there are cells not used, they will not be counted
         //It will not count empty rows or cells
         //Starts counting from 1
         int usedRows = sheet.getPhysicalNumberOfRows();
@@ -51,12 +51,12 @@ public class ExcelRead {
         int lasUsedRow = sheet.getLastRowNum();
 
         //TODO: 1- CREATE A LOGIC TO PRINT OUT NEENA'S NAME DYNAMICALLY
-        // for loop this is necessary for our lojic
+        //for this logic we will need a forLoop to implement the logic we trying to create
        // for (int i = 0; i < ; i++) then we change it for row cuz we are reading for rows
         for (int rowNum = 0; rowNum < usedRows; rowNum++) {
 
             if(sheet.getRow(rowNum).getCell(0).toString().equals("Neena")){
-                System.out.println("Neena's name = " + sheet.getRow(rowNum).getCell(0));
+                System.out.println("Current cell= " + sheet.getRow(rowNum).getCell(0));
             }
 
         }
