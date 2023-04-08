@@ -102,6 +102,7 @@ public class AdidasPage {
         year.sendKeys(String.valueOf(faker.number().numberBetween(2022, 2030)));
         purchase.click();
 
+
     }
 
     String orderId;
