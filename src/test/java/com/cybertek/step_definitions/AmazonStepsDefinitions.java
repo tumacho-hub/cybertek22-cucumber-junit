@@ -48,7 +48,7 @@ public class AmazonStepsDefinitions {
     @Then("The total price and quantity should be correct")
     public void the_total_price_and_quantity_should_be_correct() {
         amazonSearch.goToCart.click();
-        Assert.assertTrue(amazonSearch);
+
 
 
 

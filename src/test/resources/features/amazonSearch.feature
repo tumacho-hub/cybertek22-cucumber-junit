@@ -1,6 +1,6 @@
 Feature: Amazon Search and cart feature
 
-  @wip
+
   Scenario: Amazon search and cart functionality
     Given User is on Amazon Home Page
     When  User search for hats for man
