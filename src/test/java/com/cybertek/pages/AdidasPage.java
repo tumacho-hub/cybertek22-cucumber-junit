@@ -55,8 +55,8 @@ public class AdidasPage {
     @FindBy(xpath = "//button[.='Purchase']")
     public WebElement purchase;
 
-    @FindBy(xpath = "//p[@class='lead text-muted ']")
-    public WebElement purchaseConfirmation;
+    @FindBy(xpath = "//a[@class='hrefch']")
+    public List<WebElement> products;
 
 
     public int productAdder(String category, String product) {

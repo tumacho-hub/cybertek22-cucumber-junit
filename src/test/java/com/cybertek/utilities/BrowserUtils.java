@@ -285,4 +285,18 @@ public class BrowserUtils {
         }
 
     }
+
+    //this method is converting a list of WebElements into a list of String
+
+    public static List<String> getElementsTexts (List<WebElement> list){
+        List<String> elementText = new ArrayList<>();
+        for(WebElement eachElement : list){
+                elementText.add(eachElement.getText());
+
+
+        }
+        return elementText;
+
+    }
+
 }
