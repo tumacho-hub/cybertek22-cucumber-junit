@@ -13,7 +13,7 @@ Feature: Adidas Order Placement Functionalities
     And   User place order and capture logs purchase ID and Amount
     Then  User verifies purchase amount equals expected
 
-  @wip
+
     Scenario: Verify all the products exists in the categories
     Then      Under "Phones" category user should see the list of products
         | Samsung galaxy s6  |
@@ -34,7 +34,7 @@ Feature: Adidas Order Placement Functionalities
         | Apple monitor 24  |
         | ASUS Full HD      |
 
-    @wip
+
     Scenario Outline: verify each product's displayed price is same with cart price
         When  User adds "<addedProducts>" from "Phones" tp see price
         And   User removes "<removeProducts>" from cart to verify the price
